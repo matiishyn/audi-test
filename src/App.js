@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {data} from './data'
 import {selected} from './selected';
@@ -24,6 +23,8 @@ function App() {
     // roof-type.panorama
     // return car.data.vehicle.search.features.includes('roof-type.panorama')
   })
+
+  console.log(c)
   
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
           <br />
           <img width={240} src={car.data.vehicle.basic.tilesPictures[car.data.vehicle.basic.tilesPictures.length-1].url} alt="" />
           <img width={240} src={car.data.vehicle.basic.tilesPictures[car.data.vehicle.basic.tilesPictures.length-2].url} alt="" />
+          <br />
           <b>{car.engine}</b><br />
           <span>{car.data.vehicle.basic.dealer.name}</span>
           <br />
