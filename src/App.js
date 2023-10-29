@@ -1,15 +1,24 @@
 import './App.css';
 import {data} from './data'
-import {selected} from './selected';
+import {selected, priority} from './selected';
+import {useState} from 'react';
 
 
 
 function App() {
+  const [showPriority, setShowPriority] = useState(true);
 
   const c = data
   .sort((a, b) => a.priceNew - b.priceNew)
   .filter(car => car.priceNew <= 270000)
-  .filter(car => selected.includes(car.id))
+  .filter(car => {
+    if(showPriority) {
+      return priority.includes(car.id)
+    } else {
+      return selected.includes(car.id)
+    }
+    
+  })
   .filter(car => {
     const f = [
       // 'interface-type.virtual-cockpit',
@@ -29,6 +38,10 @@ function App() {
   return (
     <>
     <div>знайдено {c.length} машин</div>
+    <div>
+      <input type="checkbox" checked={showPriority} name="priority" id="priority" onChange={e => setShowPriority(e.target.checked)} />
+      <label htmlFor="priority">Show Priority</label>
+    </div>
     <div className="App wrapper">
       {c.map(car => {
         return <a key={car.id} className='car' href={car.url} target="_blank" rel="noopener noreferrer">

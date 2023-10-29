@@ -27,7 +27,35 @@ export const selected = [
   "UE9MMDA5MDAyMDIzMTEwMDMw=",
   "UE9MMDEzNjAyMDIyMTEwMTU3=",
   "UE9MMDA1MzAyMDIzMTEzMjQ0=",
-  "",
-  "",
-  "",
+]
+
+export const priority = [
+  // 2 sline, panorama
+  "UE9MMDEyMTAyMDIyMTAzODQ0=",
+  "UE9MMDA0NTAyMDIzMTEzMjU3=",
+  // "UE9MMDA0NTAyMDIzMTEyMDgw=",
+  
+  // 1 sline, panorama
+  // "UE9MMDE0NTAyMDIzMTAyODkx=",
+  // "UE9MMDA0NzAyMDIyMTA4MTg0=", // під питанням
+  // "UE9MMDE0MzAyMDIyMTA4MTgz=",
+
+  // 2 sline
+  // "UE9MMDEyMjAyMDIxMTQ3MDkx=",
+  // "UE9MMDA0NzAyMDIyMTAxNDIx=",
+  "UE9MMDA0NTAyMDIzMTEzMzQ4=",
+  // "UE9MMDEyMjAyMDIyMTAxNDI0=",
+
+  // sline exter
+  "UE9MMDA0NTAyMDIzMTA4NjMw=",
+  "UE9MMDA5OTAyMDIzMTEwMzM0=",
+  // "UE9MMDA5MDAyMDIzMTAxMTg0=",
+  // "UE9MMDA0NzAyMDIxMTQ5MTU1=",
+  "UE9MMDA2ODAyMDIzMTEyNzc5=",
+  // "UE9MMDE1MTAyMDIzMTEyNzgx=",
+  // "UE9MMDE0OTAyMDIyMTA0MzQz=",
+  // "UE9MMDA5OTAyMDIzMTEyNzcx=",
+  // "UE9MMDA5MDAyMDIzMTEwMDMw=",
+  // "UE9MMDEzNjAyMDIyMTEwMTU3=",
+  // "UE9MMDA1MzAyMDIzMTEzMjQ0=",
 ]
