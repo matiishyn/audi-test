@@ -7,6 +7,7 @@ import {useState} from 'react';
 
 function App() {
   const [showPriority, setShowPriority] = useState(true);
+  const [showDetails, setShowDetails] = useState(false);
 
   const c = data
   .sort((a, b) => a.priceNew - b.priceNew)
@@ -42,6 +43,10 @@ function App() {
       <input type="checkbox" checked={showPriority} name="priority" id="priority" onChange={e => setShowPriority(e.target.checked)} />
       <label htmlFor="priority">Show Priority</label>
     </div>
+    <div>
+      <input type="checkbox" checked={showDetails} name="priority" id="details" onChange={e => setShowDetails(e.target.checked)} />
+      <label htmlFor="details">Show Details</label>
+    </div>
     <div className="App wrapper">
       {c.map(car => {
         return <a key={car.id} className='car' href={car.url} target="_blank" rel="noopener noreferrer">
@@ -67,8 +72,8 @@ function App() {
           <div>Panorama: {car.data.vehicle.search.features.includes('roof-type.panorama') ? 'YES' : 'No :('}</div>
           <div>S-Line Exterior: {car.data.vehicle.search.features.includes('trimline.sline') ? 'YES' : 'No :('}</div>
           <div>S-Line Interior: {car.data.vehicle.search.features.includes('package-type.s-line-sport') ? 'YES' : 'No :('}</div>
-          <div>Кальоса: {car.data.vehicle.search.features.find(el => el.includes('wheel-size.'))}</div>
-          <div>Крісла: {car.data.vehicle.basic.upholsteryType.description}</div>
+          <div>{car.data.vehicle.search.features.find(el => el.includes('wheel-size.'))}</div>
+          <div>{car.data.vehicle.basic.upholsteryType.description}</div>
           <div>Features: {car.data.vehicle.search.features.length}</div>
 
           <div className='car-id'>ID: {car.id}, Oferta: {car.data.vehicle.basic.commissionNumber}</div>
@@ -77,6 +82,13 @@ function App() {
               <li>{f}</li>
             ))}
           </ul> */}
+          {showDetails && <ul>
+            {car.data.vehicle.detail.features.map(feat => {
+              const txt = feat.texts.find(t => t.key === "ak_headline")
+            
+              return (<li>{txt.text}</li>)
+            })}
+            </ul>}
         </a>
       })}
     </div>
