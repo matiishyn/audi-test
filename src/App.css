@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.wrapper {
+  display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.price-new {
+  color: red;
+}
+
+.car {
+  border: 1px solid #e3e3e3;
+  color: black;
+  text-decoration: none;
+}
+
+.price-old {
+  text-decoration: line-through;
+}
+
+.price-new,.price-old,.rabat {
+  margin-left: 25px;
+}
+
+.car-id {
+  margin-top: 10px;
+}
