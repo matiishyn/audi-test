@@ -82,11 +82,17 @@ function App() {
               <li>{f}</li>
             ))}
           </ul> */}
-          {showDetails && <ul>
-            {car.data.vehicle.detail.features.map(feat => {
+          {showDetails && <ul className='features'>
+            {car.data.vehicle.detail.features.sort((a, b) => {
+              if (!a.images) {return 1} else {return -1}
+            }).map(feat => {
               const txt = feat.texts.find(t => t.key === "ak_headline")
+              const img = feat.images?.[0]?.url;
             
-              return (<li>{txt.text}</li>)
+              return (<li>
+                {img && <img src={img} />}
+                {txt.text}
+                </li>)
             })}
             </ul>}
         </a>

@@ -39,8 +39,8 @@
 
 .wrapper {
   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
 }
 
 .price-new {
@@ -63,4 +63,19 @@
 
 .car-id {
   margin-top: 10px;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 10px;
+}
+
+.features li {
+  list-style-type: none;
+  border: 1px solid #000;
+}
+
+.features li img {
+  max-width: 100%;
 }
