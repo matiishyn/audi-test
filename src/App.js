@@ -90,7 +90,7 @@ function App() {
               const img = feat.images?.[0]?.url;
             
               return (<li>
-                {img && <img src={img} />}
+                {img && <img src={img} alt='feat' />}
                 {txt.text}
                 </li>)
             })}
